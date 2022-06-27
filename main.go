@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/joho/godotenv"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -42,5 +43,11 @@ func main() {
 
 	fmt.Println("App Token: ", envMap["APP_TOKEN"])
 	fmt.Println("Token:     ", envMap["DB_STRING"])
+	fmt.Println("")
 
+	// Print out all environmental variables
+	for _, e := range os.Environ() {
+		pair := strings.SplitN(e, "=", 2)
+		fmt.Printf("%s\n", pair[0])
+	}
 }
