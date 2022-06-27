@@ -1,0 +1,4 @@
+.idea
+
+# Don't commit .env file in real applications
+#.env
